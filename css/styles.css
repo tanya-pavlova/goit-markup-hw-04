@@ -4,6 +4,8 @@
     --title-main-color: #212121;
     --secondary-color: #757575;
     --accent-color: #2196F3;
+    --background-contrast: #2F303A;
+    --text-contrast: #FFFFFF;    
 }
 
 *,
@@ -90,7 +92,7 @@ body {
     width: 16px;
     height: 12px;
     margin-right: 10px;
-    fill: 757575;
+    fill: var(--secondary-color);
 }
 
 .tel-icon {
@@ -99,13 +101,13 @@ body {
     width: 10px;
     height: 16px;
     margin-right: 10px;
-    fill: 757575;
+    fill: var(--secondary-color);
 }
 
 
-.email-icon:hover,
-.tel-icon:hover {
-    fill: var(--accent-color);
+.email-icon, 
+.tel-icon {
+    fill: var(--secondary-color);
 }
 
 .header-email-link, 
@@ -192,7 +194,7 @@ body {
           rgba(47, 48, 58, 0.4)
           ),
            url('../images/hero-background/hero-bgnd.jpg');
-    background-color: #2F303A;
+    background-color: var(--background-contrast);
     background-repeat: no-repeat;
     background-position: center;      
 }
@@ -209,7 +211,7 @@ body {
     letter-spacing: 0.06em;
     text-transform: uppercase;
     margin-bottom: 30px;
-    color: #FFFFFF;
+    color: var(--text-contrast);
 
 }
 
@@ -221,7 +223,7 @@ body {
     line-height: 1.875;
     padding: 10px 32px;
     letter-spacing: 0.06em;
-    color: #FFFFFF;
+    color: var(--text-contrast);
     border-radius: 4px;
     min-width: 200px;
 
@@ -369,7 +371,7 @@ padding-bottom: 94px;
 }
 
 .team-list {
-    display: flex;
+    display: flex;    
 }
 
 .team-photos {
@@ -385,6 +387,7 @@ padding-bottom: 94px;
     background-color: #FFFFFF;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
+    padding-bottom: 30px;
 }
 
 .team-list-item:not(:last-child) {
@@ -411,7 +414,6 @@ margin-right: 10px;
     justify-content: space-between;
     padding-left: 32px;    
     padding-right: 32px;
-    padding-bottom: 30px;
 }
 
 .social-list-link {
@@ -429,13 +431,25 @@ margin-right: 10px;
     fill: #AFB1B8;
 }
 
-.social-list-link:hover .social-list-svg {
+.social-list-link:hover .social-list-svg,
+.social-list-link:focus .social-list-svg {
+
     fill: #FFFFFF;
 }
 
-.social-list-link:hover {
+.social-list-link:hover { 
     background-color: #2196F3;
 }
+
+.social-list .social-list-link:hover,
+.social-list .social-list-link:focus  {
+  border: 1px solid #2196F3;
+}
+.social-list-link:hover ,
+.social-list-link:focus {
+  background-color: #2196F3;
+}
+
 
 /*============  END TEAM  ============*/
 
@@ -468,11 +482,13 @@ margin-right: 10px;
     fill: #AFB1B8;
 }
 
-.clients-list-link:hover .clients-list-svg {
+.clients-list-link:hover .clients-list-svg,
+.clients-list-link:focus .clients-list-svg {
     fill: #2196F3;
 }
 
-.clients-list-link:hover {
+.clients-list .clients-list-link:hover,
+.clients-list .clients-list-link:focus {
     border: 1px solid #2196F3;
 }
 
@@ -484,6 +500,10 @@ margin-right: 10px;
     
 }
 
+.our-projects-list-link {
+    display: block;
+    height: 100%;
+}
 
 .projects-navigation-btns-list{
     display: flex;
@@ -509,10 +529,12 @@ margin-right: 10px;
     
 }
 
-.projects-navigation-btn:hover,
-.projects-navigation-btn:focus {
+.projects-navigation-btns-list .projects-navigation-btn:hover,
+.projects-navigation-btns-list .projects-navigation-btn:focus {
     background-color: var(--accent-color);
     color: #FFFFFF;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
 }
 
 .projects-img {
@@ -524,14 +546,14 @@ margin-right: 10px;
 }
 
 .our-projects-list-item {
-    width: 370px;    
+        width: 370px;       
 }
 
-.our-projects-list-item:hover {
-    border: 1px solid #EEEEEE;
-    box-sizing: border-box;
+.our-projects-list .our-projects-list-link:hover,
+.our-projects-list .our-projects-list-link:focus {      
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+
 
 .project-caption {
     border-right:1px solid #EEEEEE;
@@ -589,7 +611,7 @@ margin-right: 10px;
 
 
 .ft-background {
-    background-color: #2F303A;
+    background-color: var(--background-contrast);
 }
 
 .footer .logo {
@@ -660,9 +682,11 @@ flex-direction:column ;
 }
 
 .footer .container {
-    display: flex;
-    justify-content: flex-start;
+    display: flex; 
+}
 
+.join-title {
+    padding-top: 15px;
 }
 
 .join-list {
@@ -690,7 +714,8 @@ margin-right: 10px;
     fill: #FFFFFF;
 }
 
-.join-list-link:hover {
+.join-list .join-list-link:hover,
+.join-list .join-list-link:focus {
     background-color: #2196F3;
 
 /*============  END FOOTER  ============*/
